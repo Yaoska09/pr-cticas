@@ -1,0 +1,2 @@
+//PRIMER ARCHIVO DE PRÁCTICA
+var miMusica=0;
