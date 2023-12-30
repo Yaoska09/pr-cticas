@@ -70,7 +70,10 @@ function decidir_Repuestos(comprarRepuestos){
 
 
 
-function servicio_Celular(){
+function inicio_Servicio_Celular(){
     let info = Obtener_Info_Falla();
     decidir_Reparar_Celular(info);
+    decidir_Garantia();
+    return console.log("Fin del servicio,Gracias por su preferencia !");
+
 }
