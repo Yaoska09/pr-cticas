@@ -7,8 +7,8 @@ let comprar_Repuestos="comprar repuestos e instalarlos";
 let reparado="El celular ha sido reparado";
 let con_Garantia = "si tiene Garantía";
 let num_Revision = 0;
-function Obtener_Info_Falla() {
-   for(continuar=1;continuar>=3;num_Revision++){
+function Obtener_Info_Falla(continuar) {
+   for(continuar=1;continuar>=3;continuar++){
        continuar=con_Garantia+1;
        revisarCelular( continuar);
    }
