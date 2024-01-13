@@ -1,0 +1,11 @@
+-- Crear una tabla de usuarios (si aún no existe)
+CREATE TABLE IF NOT EXISTS usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    clave VARCHAR(10) NOT NULL
+);
+
+-- Insertar un nuevo usuario en la tabla
+INSERT INTO usuarios (nombre, clave) VALUES ('usuario_1', 'a12345');
+
+select clave from usuarios
