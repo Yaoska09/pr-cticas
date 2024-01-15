@@ -3,9 +3,8 @@
 
 head.stl2{
   background-color: aquamarine;
-
-
 }
+
 body.stl3 {
     font-family: Arial, sans-serif;
     background-color:#228b22;
@@ -14,13 +13,11 @@ body.stl3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* This ensures the body takes up the full viewport height */
-  }
+    height: 100vh; 
+}
   
-  
-  
-  img {
-    width: 800px; /* Set the width of the image */
-    height: 500px; /* Set the height of the image */
-  }
+img {
+  width: 800px; /* Set the width of the image */
+  height: 500px; /* Set the height of the image */
+}
   
