@@ -23,4 +23,9 @@ body.stl3 {
     width: 800px; /* Set the width of the image */
     height: 500px; /* Set the height of the image */
   }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 60%;
+      margin: auto;
+  }
   
