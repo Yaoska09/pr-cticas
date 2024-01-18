@@ -1,28 +1,31 @@
 
 /* styles.css */
 
-head.stl2{
-  background-color: aquamarine;
-
-
+body {
+  font-family: Arial, sans-serif;
+  background-color:#228b22;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
 }
-body.stl3 {
-    font-family: Arial, sans-serif;
-    background-color:#228b22;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* This ensures the body takes up the full viewport height */
-  }
+
+
+
+img {
+width: 800px; /* Set the width of the image */
+height: 500px; /* Set the height of the image */
+}
+
+head{
+background-color: aquamarine;
+}
+
+
   
-  
-  
-  img {
-    width: 800px; /* Set the width of the image */
-    height: 500px; /* Set the height of the image */
-  }
+ 
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 60%;
