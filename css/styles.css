@@ -2,7 +2,7 @@
 /* styles.css */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, serif;
   background-color:#228b22;
   color: #ffffff;
   display: flex;
@@ -11,21 +11,30 @@ body {
   justify-content: center;
  
 }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+.main_title {
+
+  font-family: Georgia, serif;
+  font-size: 100px;
+  color: #228b22;
+  
 }
+.contentBody{
+  color: #333;
+  font-size: 6px;
+}
+
 
 .topnav {
   overflow: hidden;
   background-color: #333;
+  
 }
 
 .topnav a {
   float: left;
   color: #228b22;
   text-align: center;
-  padding: 14px 80px;
+  padding: 14px 120px;
   text-decoration: none;
   font-size: 25px;
 }
