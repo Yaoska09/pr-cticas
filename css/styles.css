@@ -1,6 +1,12 @@
 
 /* styles.css */
+.main_title {
 
+  font-family: Georgia, serif;
+  font-size: 150px;
+  color: #228b22;
+  
+}
 body {
   font-family: Georgia, serif;
   background-color:#228b22;
@@ -11,22 +17,16 @@ body {
   justify-content: center;
  
 }
-.main_title {
 
-  font-family: Georgia, serif;
-  font-size: 100px;
-  color: #228b22;
-  
-}
 .contentBody{
-  color: #333;
+  color: #000;
   font-size: 6px;
 }
 
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #000;
   
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #000;
   color: b#228b22;
 }
 
@@ -51,8 +51,8 @@ body {
 
 
 img {
-width: 800px; /* Set the width of the image */
-height: 500px; /* Set the height of the image */
+width: 600px; /* Set the width of the image */
+height: 424px; /* Set the height of the image */
 }
 
 head{

@@ -1,0 +1,10 @@
+create table usuarios(
+	id_usuarios serial,
+	nombre varchar(10),
+	clave varchar(10)
+);
+
+INSERT INTO usuarios (nombre, clave) VALUES ('usuario_1', 'a12345');
+INSERT INTO usuarios (nombre, clave) VALUES ('usuario_2', 'a12346');
+
+select * from usuarios 
