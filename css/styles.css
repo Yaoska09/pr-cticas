@@ -1,16 +1,28 @@
 
 /* styles.css */
-.main_title {
 
-  font-family: Georgia, serif;
-  font-size: 150px;
-  color: #228b22;
+header img{
+
+  padding: 80px 80px;
+  margin-right: 100px;
+  align-items: center;
   
 }
-body {
+.main_title{
   font-family: Georgia, serif;
+  font-size: 80px;
+  color: #228b22;
+  display: flex;
+  align-items: center;
+
+  
+}
+
+
+
+body{  font-family: Georgia, serif;
   background-color:#228b22;
-  color: #ffffff;
+  color: #197a81;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +33,8 @@ body {
 .contentBody{
   color: #000;
   font-size: 6px;
+  padding: 14px 120px;
+  font-family: Georgia, serif;
 }
 
 
