@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const controller = require('../../Controlador/administradores_controlador');
-
+//checked
 const router = Router();
 
 router.get('/', controller.get);

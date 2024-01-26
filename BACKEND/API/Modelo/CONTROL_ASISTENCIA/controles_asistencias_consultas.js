@@ -5,7 +5,7 @@ const getById_funcionario = "SELECT id, id_funcionario,id_menor,fecha,asistencia
 const add = "INSERT INTO CONTROL_ASISTENCIA (id_funcionario,id_menor,fecha,asistencia) VALUES ($1, $2, $3,$4)";
 const remove = "DELETE FROM CONTROL_ASISTENCIA WHERE id = $1";
 const update = "UPDATE CONTROL_ASISTENCIA SET id_funcionario=$1,id_menor=$2,fecha=$3,asistencia=$4  WHERE id = $5";
-
+//checked
 module.exports = {
     get,
     getById,
