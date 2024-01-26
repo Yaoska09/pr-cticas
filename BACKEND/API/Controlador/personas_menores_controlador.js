@@ -10,13 +10,13 @@ const get = (req, res) => {
 
 
 const add = (req, res) => {
-    const { id_persona, rol,aula,correo,clave } = req.body;
+    const { id_persona,id_encargado,autorizacion } = req.body;
     pool.query(consultas.getByCorreo, [correo], (error, results) => {//modificar siguiendo el archivo de consulta en  la carpeta MODELO
         if (results.rows.length) {
             res.json("ya existe");
 	    return;
         }
-        pool.query(consultas.add, [id_persona, rol,aula,correo,clave], (error, results) => {
+        pool.query(consultas.add, [id_persona,id_encargado,autorizacion], (error, results) => {
             if (error) throw error;
             res.status(201).json('creado exitosamente');
         });
@@ -33,9 +33,17 @@ const getById = (req, res) => {
     });
 };
 
-const getByCorreo = (req, res) => {
-    const correo = req.params.correo;
-    pool.query(consultas.getByCorreo, [correo], (error, results) => {
+const getById_persona = (req, res) => {
+    const correo = req.params.id_persona;
+    pool.query(consultas.getByCorreo, [id_persona], (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    });
+};
+
+const getById_encargado = (req, res) => {
+    const correo = req.params.id_encargado;
+    pool.query(consultas.getByCorreo, [id_encargado], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     });
@@ -77,7 +85,8 @@ const update = (req, res) => {
 module.exports = {
     get,
     getById,
-    getByCorreo,
+    getById_persona,
+    getById_encargado,
     add,
     remove,
     update,

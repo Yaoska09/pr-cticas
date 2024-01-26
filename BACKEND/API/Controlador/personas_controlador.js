@@ -77,6 +77,7 @@ const update = (req, res) => {
 module.exports = {
     get,
     getById,
+    getByCedula,
     add,
     remove,
     update,

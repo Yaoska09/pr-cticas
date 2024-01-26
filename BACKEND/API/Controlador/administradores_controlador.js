@@ -1,5 +1,5 @@
 const pool = require("../conexion_BD");
-const consultas = require('../Modelo/FUNCIONARIO/funcionarios_consultas');
+const consultas = require('../Modelo/ADMINISTRADOR/administradores_consultas');
 
 const get = (req, res) => {
     pool.query(consultas.get, (error, results) => {
@@ -10,13 +10,13 @@ const get = (req, res) => {
 
 
 const add = (req, res) => {
-    const { id_persona, rol,aula,correo,clave } = req.body;
-    pool.query(consultas.getByCorreo, [correo], (error, results) => {//modificar siguiendo el archivo de consulta en  la carpeta MODELO
+    const { id_persona,correo,clave } = req.body;
+    pool.query(consultas.getByCedula, [cedula], (error, results) => {
         if (results.rows.length) {
             res.json("ya existe");
 	    return;
         }
-        pool.query(consultas.add, [id_persona, rol,aula,correo,clave], (error, results) => {
+        pool.query(consultas.add, [id_persona,correo,clave], (error, results) => {
             if (error) throw error;
             res.status(201).json('creado exitosamente');
         });
@@ -34,7 +34,7 @@ const getById = (req, res) => {
 };
 
 const getByCorreo = (req, res) => {
-    const correo = req.params.correo;
+    const cedula = req.params.correo;
     pool.query(consultas.getByCorreo, [correo], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
@@ -59,14 +59,14 @@ const remove = (req, res) => {
 
 const update = (req, res) => {
     const id = parseInt(req.params.id);
-    const { id_persona, rol,aula,correo,clave} = req.body;
-    pool.query(consultas.getById, [id], (error, results) => {//este no debo modificar exactamente getbyId
+    const { id_persona,correo,clave } = req.body;
+    pool.query(consultas.getById, [id], (error, results) => {
         const notFound = !results.rows.length;
         if (notFound) {
             res.status(404).send("No existe en la base de datos");
             return;
         }
-        pool.query(consultas.update, [id_persona, rol,aula,correo,clave], (error, results) => {
+        pool.query(consultas.update, [id_persona,correo,clave], (error, results) => {
             if (error) throw error;
             res.status(200).json("Actualizado exitosamente");
         });

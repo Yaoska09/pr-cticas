@@ -33,9 +33,9 @@ const getById = (req, res) => {
     });
 };
 
-const getByCorreo = (req, res) => {
-    const correo = req.params.correo;
-    pool.query(consultas.getByCorreo, [correo], (error, results) => {
+const getById_persona = (req, res) => {
+    const correo = req.params.id_persona;
+    pool.query(consultas.getByCorreo, [id_persona], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     });
@@ -77,7 +77,7 @@ const update = (req, res) => {
 module.exports = {
     get,
     getById,
-    getByCorreo,
+    getById_persona,
     add,
     remove,
     update,

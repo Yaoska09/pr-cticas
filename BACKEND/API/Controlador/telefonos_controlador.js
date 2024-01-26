@@ -10,13 +10,13 @@ const get = (req, res) => {
 
 
 const add = (req, res) => {
-    const { id_persona, rol,aula,correo,clave } = req.body;
+    const { id_persona,numero,descrpcion } = req.body;
     pool.query(consultas.getByCorreo, [correo], (error, results) => {//modificar siguiendo el archivo de consulta en  la carpeta MODELO
         if (results.rows.length) {
             res.json("ya existe");
 	    return;
         }
-        pool.query(consultas.add, [id_persona, rol,aula,correo,clave], (error, results) => {
+        pool.query(consultas.add, [id_persona,numero,descrpcion], (error, results) => {
             if (error) throw error;
             res.status(201).json('creado exitosamente');
         });
@@ -33,14 +33,21 @@ const getById = (req, res) => {
     });
 };
 
-const getByCorreo = (req, res) => {
-    const correo = req.params.correo;
-    pool.query(consultas.getByCorreo, [correo], (error, results) => {
+const getById_persona = (req, res) => {
+    const correo = req.params.id_persona;
+    pool.query(consultas.getByCorreo, [id_persona], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     });
 };
 
+const getByNumero= (req, res) => {
+    const correo = req.params.numero;
+    pool.query(consultas.getByCorreo, [numero], (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    });
+};
 
 const remove = (req, res) => {
     const id = parseInt(req.params.id);
@@ -77,7 +84,8 @@ const update = (req, res) => {
 module.exports = {
     get,
     getById,
-    getByCorreo,
+    getById_persona,
+    getByNumero,
     add,
     remove,
     update,
