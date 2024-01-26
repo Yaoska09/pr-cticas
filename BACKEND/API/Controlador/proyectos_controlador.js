@@ -35,7 +35,7 @@ const getById = (req, res) => {
 
 const getByFecha = (req, res) => {
     const correo = req.params.fecha;
-    pool.query(consultas.getByCorreo, [fecha], (error, results) => {
+    pool.query(consultas.getByFecha, [fecha], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     });

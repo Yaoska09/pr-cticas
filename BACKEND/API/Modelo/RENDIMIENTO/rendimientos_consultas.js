@@ -8,8 +8,7 @@ const update = "UPDATE RENDIMIENTOS SET id_menor=$1,id_proyecto=$2,nota=$3 WHERE
 module.exports = {
     get,
     getById,
-    getById_menor,
-    getById_proyecto,   
+    getByFecha,   
     add,
     remove,
     update,

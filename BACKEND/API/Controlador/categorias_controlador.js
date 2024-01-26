@@ -33,13 +33,13 @@ const getById = (req, res) => {
     });
 };
 
-//const getByCorreo = (req, res) => {//debo comentarlo?no tengo esto en esta tabla?????????????????????????????????
-   // const correo = req.params.correo;
-    //pool.query(consultas.getByCorreo, [correo], (error, results) => {
-       // if (error) throw error;
-        //res.status(200).json(results.rows);
-   // });
-//};
+const getByCorreo = (req, res) => {//debo comentarlo?no tengo esto en esta tabla?????????????????????????????????
+const correo = req.params.correo;
+    pool.query(consultas.getByCorreo, [correo], (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+   });
+};
 
 
 const remove = (req, res) => {

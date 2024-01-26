@@ -35,7 +35,7 @@ const getById = (req, res) => {
 
 const getById_persona = (req, res) => {
     const correo = req.params.id_persona;
-    pool.query(consultas.getByCorreo, [id_persona], (error, results) => {
+    pool.query(consultas.getById_persona, [id_persona], (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     });
