@@ -66,7 +66,7 @@ const update = (req, res) => {
             res.status(404).send("No existe en la base de datos");
             return;
         }
-        pool.query(consultas.update, [], (error, results) => {
+        pool.query(consultas.update, [numero,descripcion,id], (error, results) => {
             if (error) throw error;
             res.status(200).json("Actualizado exitosamente");
         });

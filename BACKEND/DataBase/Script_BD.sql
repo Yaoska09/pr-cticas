@@ -36,7 +36,7 @@ CREATE TABLE TELEFONOS (
 
 CREATE TABLE AULAS (
 	id SERIAL PRIMARY KEY,
-    nombre VARCHAR(20),
+    numero INT,
 	descripcion VARCHAR(50)
 );
 
@@ -178,13 +178,13 @@ VALUES
     (5, '567890123', 'Teléfono5');
 
 -- Para AULAS
-INSERT INTO AULAS (nombre, descripcion)
+INSERT INTO AULAS (numero, descripcion)
 VALUES
-    ('Aula1', 'Descripción Aula1'),
-    ('Aula2', 'Descripción Aula2'),
-    ('Aula3', 'Descripción Aula3'),
-    ('Aula4', 'Descripción Aula4'),
-    ('Aula5', 'Descripción Aula5');
+    (1, 'Descripción Aula1'),
+    (2, 'Descripción Aula2'),
+    (3, 'Descripción Aula3'),
+    (4, 'Descripción Aula4'),
+    (5, 'Descripción Aula5');
 
 -- Para FUNCIONARIOS
 INSERT INTO FUNCIONARIOS (id_persona, rol, aula, correo, clave)
@@ -277,5 +277,5 @@ VALUES
     (5, 'admin5@example.com', 'clave_admin5');
 
 
-select * from PERSONAS;
+select * from AULAS;
 
