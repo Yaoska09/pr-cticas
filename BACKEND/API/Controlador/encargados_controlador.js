@@ -59,14 +59,14 @@ const remove = (req, res) => {
 
 const update = (req, res) => {
     const id = parseInt(req.params.id);
-    const { id_persona, rol,aula,correo,clave} = req.body;
+    const { id_persona,direccion} = req.body;
     pool.query(consultas.getById, [id], (error, results) => {//este no debo modificar exactamente getbyId
         const notFound = !results.rows.length;
         if (notFound) {
             res.status(404).send("No existe en la base de datos");
             return;
         }
-        pool.query(consultas.update, [id_persona, rol,aula,correo,clave], (error, results) => {
+        pool.query(consultas.update, [id_persona,direccion], (error, results) => {
             if (error) throw error;
             res.status(200).json("Actualizado exitosamente");
         });
