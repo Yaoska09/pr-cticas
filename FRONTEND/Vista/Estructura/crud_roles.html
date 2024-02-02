@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento de Roles</title>
+    <link rel="stylesheet" href="../Estilos/crud_roles.css">
+</head>
+<body>
+   
+    <div>
+        <a href="home.html" class="home-button">Regresar a la página de inicio</a>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="column form-column">
+            <h2>Agregar Rol</h2>
+            <input type="text" id="nombre" class="form-input" placeholder="Nombre" autocomplete="on">
+            <input type="text" id="descripcion" class="form-input" placeholder="Descripcion" autocomplete="on">
+            <button id="btnAgregar" class="btn btn-agregar">Agregar</button>
+        </div>
+        <div class="column select-column">
+            <h2>Seleccionar Rol</h2>
+            <select id="selectRol" class="select-input">
+                <!-- Opciones se llenarán mediante JavaScript -->
+                <option value="">Seleccionar</option>
+            </select>
+            <br>
+            <br>
+            <input type="text" id="nombreEditar" class="form-input" placeholder="Nombre">
+            <input type="text" id="descripcionEditar" class="form-input" placeholder="Descripcion">
+            <button id="btnEditar" class="btn btn-update">Editar</button>
+            <button id="btnEliminar" class="btn btn-delete">Eliminar</button>
+        </div>
+
+        <div class="column view-column">
+            <h2>Lista de Roles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody id="rolesList">
+                    <!-- Aquí se llenará la lista de roles mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="../Logica/crud_roles.js"></script>
+    
+</body>
+</html>

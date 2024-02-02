@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnAgregar = document.getElementById('btnAgregar');
     const btnEditar = document.getElementById('btnEditar');
     const btnEliminar = document.getElementById('btnEliminar');
-    const selectAulas = document.getElementById('selectAula');
+    const selectAula = document.getElementById('selectAula');
     const numeroEditar = document.getElementById('numeroEditar');
     const descripcionEditar = document.getElementById('descripcionEditar');
     const aulaList = document.getElementById('aulasList');
