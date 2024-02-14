@@ -1,6 +1,6 @@
 // crud_aulas.js
 
-const aulas_url = 'http://localhost:3000/api/roles';
+const roles_url = 'http://localhost:3000/api/roles';
 
 function get(url) {
     return fetch(url)
@@ -33,10 +33,11 @@ function create(url, data) {
             }
             return response.json();
         })
-        .then(data => {
+        /*.then(data => {
             console.log('Respuesta de la API:', data);
             return data;
-        })
+        })*/   // it refers the same action in the lines 29 until 34
+
         .catch(error => {
             console.error('Error en la solicitud:', error);
             throw error;
@@ -59,9 +60,9 @@ function update(url, data) {
             }
             return response.json(); // Parsea la respuesta JSON si la hay
         })
-        .then(data => {
+        /*.then(data => {
             console.log('Respuesta de la API:', data);
-        })
+        })*/ //the same of line 39
         .catch(error => {
             console.error('Error en la solicitud:', error);
         });
@@ -76,7 +77,7 @@ function eliminate(url, id) {
     };
 
     // Realiza la solicitud DELETE a la API
-    return fetch(`${url}/${id}`, requestOptions)
+    return fetch(`${url}/${id}`, requestOptions)//with the quotationmark and dollar simbol we can join both data with / slash example en el server 
         .then((response) => {
             if (!response.ok) {
                 throw new Error('La solicitud no se pudo completar correctamente');
@@ -211,6 +212,7 @@ function llenarSelect() {
 
 // Función para actualizar la lista de roles en la tabla
 function actualizarLista() {
+    
     const rolesList = document.getElementById('rolesList');
 
     // Obtener la lista de roles almacenada en el localStorage
@@ -235,6 +237,7 @@ function actualizarLista() {
                     <td>${rol.descripcion}</td>
                                     `;
                 rolesList.appendChild(row);
+               
             });
         })
         .catch(error => {
@@ -258,7 +261,7 @@ function limpiarFormulario() {
 // Resto del código que ya tienes...
 
 // Lógica de autocompletado
-var autocompleteInput = document.getElementById("autocompleteInput");
+//var autocompleteInput = document.getElementById("autocompleteInput");
 var selectRol = document.getElementById("selectRol");
 
 // Extiende la función llenarSelect para incluir autocompletado
@@ -293,7 +296,7 @@ function llenarSelectAutocompletado(sugerencias) {
     });
 }
 
-autocompleteInput.addEventListener("input", function () {
+/*autocompleteInput.addEventListener("input", function () {
     var input = this.value.toLowerCase();
 
     // Aquí puedes realizar una solicitud al servidor para obtener las sugerencias
@@ -314,7 +317,7 @@ autocompleteInput.addEventListener("input", function () {
             console.error("Error al obtener la lista de aulas:", error);
             alert(error);
         });
-});
+});*/
 
 
 // Resto del código que ya tienes...
@@ -330,9 +333,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const rolList = document.getElementById('rolesList');
 
   // Escuchar clic en botón "Agregar"
-  btnAgregar.addEventListener('click', function () {
-    agregarRol(); 
-  });
+  btnAgregar.addEventListener('click', agregarRol() );
 
   // Escuchar clic en botón "Editar"
   btnEditar.addEventListener('click', function () {
@@ -351,3 +352,5 @@ document.addEventListener('DOMContentLoaded', function () {
   actualizarLista();
 
 });
+console.log("hello");
+
